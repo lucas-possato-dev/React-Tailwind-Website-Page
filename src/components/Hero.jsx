@@ -1,17 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import heroVid from '../assets/video.mp4';
 
 const Hero = () => {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-      videoRef.current.muted = true;
-    }
-  }, []);
-
   return (
-    <div className='w-full h-[90vh] top-[90px]'>
-      <video ref={videoRef} className='object-cover h-full w-full absolute -z-10' src={heroVid} autoPlay loop />
+    <div className='w-full h-[90vh] bg-black top-[90px] bg black sm:bg-transparent'>
+      <video className='object-cover h-full w-full absolute -z-10' src={heroVid} autoPlay loop muted />
       <div className='w-full h-[90%] flex flex-col justify-center items-center text-white px-4 text-center'>
         <h1>Decentralized</h1>
         <h1 className='py-2'><span className='text-[--primary-blue]'>Trading</span> Protocol</h1>
@@ -28,4 +21,4 @@ const Hero = () => {
   )
 }
 
-export default Hero;
+export default Hero
